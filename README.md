@@ -79,10 +79,10 @@ This document is to help readers ramp up quickly on Microsoft's Language Underst
   - As a best practice, it's helpful to keep different domains (such as booking flights vs ordering food) in separate LUIS applications. If needed, a top-level LUIS application can help direct the query to the correct domain specific application. 
 
   Example:
-  > "Tell me about J.P. Morgan Chase." (Intent: InfoCompany)
+  > "Tell me about J.P. Morgan Chase." (Intent: InfoCompany)  
   > "Tell me about Bill Gates." (Intent: InfoPerson)
   
-  LUIS uses syntax to train its model, and does not rely on semantic meaning. So, grammatically similar samples will not differentiate well. The two utterances above are probably far too similar to train into two different intents. But, we can either create two different applications that are called by the bot after its asked the user whether or not it wants to talk about companies or people. 
+  LUIS uses syntax to train its model, and does not rely on semantic meaning. So, grammatically similar samples will not differentiate well. The two utterances above are probably far too similar to train into two different intents for the same app. But, we can either create two different applications that are called by the bot after its asked the user whether or not it wants to talk about companies or people, or we can differentiate based on the entity and just create a common "GetInfo" intent.
 
 - Use features to enhance results from LUIS.
   - Especially when the vocabulary for a domain is unique (such as with medical field), features such as phrase lists and patterns as well as entity lists, hierarchies, and compositions can help a model train more quickly.
